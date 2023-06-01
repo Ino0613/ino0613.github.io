@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="https://ino.iyunmc.cn/notes/elasticsearch.html">
+  <link rel="canonical" href="https://aqu.iyunmc.cn/notes/elasticsearch.html">
   <!-- 渲染优化 -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
       <link rel="dns-prefetch" href="https://unpkg.com">
@@ -23,61 +23,9 @@
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
-      <meta name="msapplication-TileColor" content="#ffffff">
-      <meta name="msapplication-config" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/browserconfig.xml">
-      <meta name="theme-color" content="#ffffff">
-      <link rel="apple-touch-icon" sizes="180x180" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png">
-      <link rel="icon" type="image/png" sizes="32x32" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon-32x32.png">
-      <link rel="icon" type="image/png" sizes="16x16" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon-16x16.png">
-      <link rel="manifest" href="/site.webmanifest">
-      <link rel="mask-icon" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
-      <link rel="shortcut icon" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon.ico">
-      <meta name="apple-mobile-web-app-title" content="Volantis">
-      <meta name="application-name" content="Volantis">
-      <meta name="msapplication-TileColor" content="#f4f4f4">
-      <meta name="msapplication-TileImage" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon-32x32.png">
-      <meta name="theme-color" content="#f4f4f4" media="(prefers-color-scheme: light)">
-      <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
   <!-- import head_begin end -->
   <!-- Custom Files headBegin begin-->
-  <script>
-  /////////////////////////////// serviceWorker ///////////////////////////////////////////
-  function registerServiceWorker(path) {
-    if (window.location.hostname != "localhost") {
-      "serviceWorker" in navigator && navigator.serviceWorker.register(`${path}?time=${new Date().getTime()}`).then(function (n) {
-        n.onupdatefound = function () {
-          var e = n.installing;
-          e.onstatechange = function () {
-            switch (e.state) {
-              case "installed":
-                navigator.serviceWorker.controller ?
-                  console.log("Updated Service Worker.") :
-                  console.log("Service Worker Sucess!");
-                break;
-              case "redundant":
-                console.log("The installing service worker became redundant.")
-            }
-          }
-        }
-      }).catch(function (e) {
-        console.error("Error during service worker registration:", e)
-        if (typeof swinstallretry === 'undefined') {
-          swinstallretry = 1;
-          registerServiceWorker(`/volantis-sw.js`)
-        }
-      });
-    }
-  }
-  registerServiceWorker(`/volantis-sw.js`)
-  //////////////////////////////////////////////////////////////////////////
-  //// unregister serviceWorker
-  // if ('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.ready.then(registration => {
-  //     registration.unregister();
-  //   });
-  // }
-  //////////////////////////////////////////////////////////////////////////
-</script>
+  <!--  -->
   <!-- Custom Files headBegin end-->
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1660614606622/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -92,7 +40,7 @@
   
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ino&#39;s Blog - 筱冉的温馨小窝">
-<meta property="og:url" content="https://ino.iyunmc.cn/notes/elasticsearch">
+<meta property="og:url" content="https://aqu.iyunmc.cn/notes/elasticsearch">
 <meta property="og:site_name" content="Ino&#39;s Blog - 筱冉的温馨小窝">
 <meta property="og:description" content="elasticsearch什么是elasticsearch？ 一个开源的分布式搜索引擎，可以用来实现搜索、日志统计、分析、系统监控等功能  什么是elastic stack（ELK）？ 是以elasticsearch为核心的技术栈，包括beats、Logstash、kibana、elasticsearch  什么是Lucene？ 是Apache的开源搜索引擎类库，提供了搜索引擎的核心API  正向">
 <meta property="og:locale" content="zh_CN">
@@ -2321,7 +2269,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1685602387095),
+    lastupdate: new Date(1685629385072),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2344,11 +2292,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     },
     plugins: {
       message: {"enable":true,"icon":{"default":"fa-light fa-info-circle light-blue","quection":"fa-light fa-question-circle light-blue"},"time":{"default":5000,"quection":20000},"position":"topRight","transitionIn":"bounceInLeft","transitionOut":"fadeOutRight","titleColor":"var(--color-text)","messageColor":"var(--color-text)","backgroundColor":"var(--color-card)","zindex":2147483647,"copyright":{"enable":true,"title":"知识共享许可协议","message":"请遵守 CC BY-NC-SA 4.0 协议。","icon":"fa-brands fa-creative-commons light-blue"},"aplayer":{"enable":true,"play":"fa-light fa-play light-blue","pause":"fa-light fa-pause light-blue","error":"fa-light fa-exclamation-square red"},"rightmenu":{"enable":true,"notice":true}},
-      
-      aplayer: {
-        id: 5062959861,
-        enable:true
-      },
       
       
       rightmenus: {"enable":true,"order":["plugins.navigation","hr","plugins.inputBox","plugins.seletctText","plugins.elementCheck","plugins.elementImage","hr","menus.prevNext","hr","menus.links","hr","menus.darkMode","hr","plugins.articlePage","hr","music"],"options":{"iconPrefix":"fa-duotone PETERRIVE","articleShowLink":true,"musicAlwaysShow":true},"plugins":{"navigation":[{"id":"left","name":"转到上一页","icon":"fa-duotone fa-arrow-left PETERRIVE","event":"history.back()","group":"navigation"},{"id":"right","name":"转到下一页","icon":"fa-duotone fa-arrow-right PETERRIVE","event":"history.forward()","group":"navigation"},{"id":"redo","name":"刷新当前页面","icon":"fa-duotone fa-redo PETERRIVE","event":"window.location.reload()","group":"navigation"},{"id":"up","name":"回到顶部","icon":"fa-duotone fa-arrow-up PETERRIVE","event":"VolantisApp.scrolltoElement(volantis.dom.bodyAnchor)","group":"navigation"}],"inputBox":[{"id":"copyPaste","name":"粘贴文本","icon":"fa-duotone PETERRIVE fa-paste","event":"copyPaste","group":"inputBox"},{"id":"copyAll","name":"全选文本","icon":"fa-duotone PETERRIVE fa-object-ungroup","event":"copyAll","group":"inputBox"},{"id":"copyCut","name":"剪切文本","icon":"fa-duotone PETERRIVE fa-cut","event":"copyCut","group":"inputBox"}],"seletctText":[{"id":"copyText","name":"复制文本","icon":"fa-duotone PETERRIVE fa-copy","event":"copyText","group":"seletctText"},{"id":"searchWord","name":"站内搜索","icon":"fa-duotone PETERRIVE fa-search","event":"OpenSearch(__text__)","group":"seletctText"},{"id":"bingSearch","name":"必应搜索","icon":"fa-duotone PETERRIVE fa-search","event":"window.open(`https://cn.bing.com/search?q=${__text__}`)","group":"seletctText"}],"elementCheck":[{"id":"openTab","name":"新标签页打开","icon":"fa-duotone PETERRIVE fa-external-link-square-alt","event":"window.open(__link__)","group":"elementCheck"},{"id":"copyLink","name":"复制链接地址","icon":"fa-duotone PETERRIVE fa-link","event":"copyLink","group":"elementCheck"}],"elementImage":[{"id":"copyImg","name":"复制图片","icon":"fa-duotone PETERRIVE fa-image","event":"copyImg","group":"elementImage"},{"id":"googleImg","name":"谷歌识图","icon":"fa-duotone PETERRIVE fa-images","event":"window.open(`https://www.google.com/searchbyimage?image_url=${__link__}`)","group":"elementImage"}],"articlePage":[{"id":"printMode","name":"打印页面","icon":"fa-duotone fa-print TURQUOISE","event":"printMode","group":"articlePage"},{"id":"readMode","name":"阅读模式","icon":"fa-duotone fa-book-open EMERALD","event":"readMode","group":"articlePage"}]},"menus":{"link":[{"id":"help","name":"常见问题","icon":"fa-solid fa-question","link":"https://volantis.js.org/faqs/","group":"link"},{"id":"examples","name":"示例博客","icon":"fa-solid fa-rss","link":"https://volantis.js.org/examples/","group":"link"},{"id":"contributors","name":"加入社区","icon":"fa-solid fa-fan","link":"https://volantis.js.org/contributors/","group":"link"},"hr",{"id":"source_docs","name":"本站源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/volantis-docs/","group":"link"},{"id":"source_theme","name":"主题源码","icon":"fa-solid fa-code-branch","link":"https://github.com/volantis-x/hexo-theme-volantis/","group":"link"}],"darkMode":[{"id":"darkMode","name":"暗黑模式","icon":"fa-duotone fa-eclipse-alt WISTERIA","event":"volantis.dark.toggle()","group":"darkMode"}],"links":[{"id":"messages","name":"留言板","icon":"fa-duotone fa-comment-alt-smile PETERRIVE fa-fw","link":"/messages/","group":"link"},{"id":"friends","name":"我的朋友们","icon":"fa-duotone fa-link ALIZARIN fa-fw","link":"/friends/","group":"link"},{"id":"fcircle","name":"朋友圈","icon":"fa-duotone fa-user-friends PUMPKIN fa-fw","link":"/fcircle/","group":"link"},{"id":"photos","name":"图片馆","icon":"fa-duotone fa-image EMERALD fa-fw","link":"/photos/","group":"link"},{"id":"history","name":"时间轴","icon":"fa-duotone fa-history AMETHYST fa-fw","link":"/history/","group":"link"},"hr"],"prevNext":[{"id":"prev","name":"查看上一篇","icon":"fa-duotone fa-angles-left PETERRIVE","event":"volantis.rightmenu.jump('prev')","group":"prevNext"},{"id":"next","name":"查看下一篇","icon":"fa-duotone fa-angles-right PETERRIVE","event":"volantis.rightmenu.jump('next')","group":"prevNext"}]}}
@@ -2927,7 +2870,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-page" id="page" itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://ino.iyunmc.cn/notes/elasticsearch">
+  <link itemprop="mainEntityOfPage" href="https://aqu.iyunmc.cn/notes/elasticsearch">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ino's Blog - 筱冉的温馨小窝">
   </span>
@@ -3013,7 +2956,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://ino.iyunmc.cn/notes/elasticsearch&title= - Ino's Blog - 筱冉的温馨小窝&summary=">
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aqu.iyunmc.cn/notes/elasticsearch&title= - Ino's Blog - 筱冉的温馨小窝&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -3021,7 +2964,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://ino.iyunmc.cn/notes/elasticsearch&title= - Ino's Blog - 筱冉的温馨小窝&summary=">
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aqu.iyunmc.cn/notes/elasticsearch&title= - Ino's Blog - 筱冉的温馨小窝&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -3029,7 +2972,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://ino.iyunmc.cn/notes/elasticsearch&title= - Ino's Blog - 筱冉的温馨小窝&summary=">
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aqu.iyunmc.cn/notes/elasticsearch&title= - Ino's Blog - 筱冉的温馨小窝&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -3138,13 +3081,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <div class="aplayer-container">
           
-
-  
-    
-      <meting-js theme="#1BCDFC" autoplay="false" volume="0.4" loop="all" order="random" fixed="false" list-max-height="320px" server="netease" type="playlist" id="5062959861" list-folded="true">
-      </meting-js>
-    
-  
 
 
         </div>
@@ -3836,84 +3772,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
 
-  <script>
-  volantis.css("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css");
-
-  
-    (async () => {
-      // APlayer 需要在  MetingJS 之前加载
-      await volantis.js("https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js")
-      await volantis.js("https://unpkg.com/meting@2/dist/Meting.min.js")
-    
-      // 右键 music 需要在 APlayer  MetingJS 之后加载
-      await volantis.js('/js/plugins/aplayer.js')
-    
-    })();
-
-    function SetAPlayerPlugin(){
-      let Metings = document.querySelectorAll('meting-js');
-      if (Metings.length === 0) {return;};
-      if (Metings[0].aplayer && Metings[0].aplayer.on) {
-        // improve the accessibility https://web.dev/button-name/
-        document.querySelectorAll(".aplayer-icon-menu").forEach(e=>{
-          e.setAttribute("aria-label","Aplayer Menu")
-        })
-        // message see: /layout/_plugins/message/script.ejs
-        
-          try {
-            setTimeout(() => {
-              Metings.forEach((item, index) => {
-                const aplayerItem = item.aplayer; if(!aplayerItem) return;
-                const rightAplayerCheck = 'true' === 'true'
-                  && item.meta.id === '5062959861';
-                if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
-                if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
-                  aplayerItem.on('play', function messagePlay() {
-                    let index = aplayerItem.list.index;
-                    let title = aplayerItem.list.audios[index].title;
-                    let artist = aplayerItem.list.audios[index].artist;
-                    setTimeout(() => {
-                      VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                        icon: 'fa-light fa-play light-blue',
-                        transitionIn: 'flipInX',
-                        transitionOut: 'flipOutX'
-                      });
-                    }, 100)
-                  });
-                }
-                if(aplayerItem.events.events.pause.every(item => {return item.name !== 'messagePause'})) {
-                  aplayerItem.on('pause', function messagePause() {
-                    let index = aplayerItem.list.index;
-                    let title = aplayerItem.list.audios[index].title;
-                    let artist = aplayerItem.list.audios[index].artist;
-                    setTimeout(() => {
-                      // 歌曲播放结束也会触发 pause 事件，为了避免错误提示，等待一会儿
-                      if(aplayerItem.paused) {
-                        VolantisApp.message('音乐通知', title + ' - ' + artist, {
-                          icon: 'fa-light fa-pause light-blue',
-                          transitionIn: 'flipInX',
-                          transitionOut: 'flipOutX'
-                        });
-                      }
-                    }, 100)
-                  });
-                }
-              });
-            }, 500)
-          } catch (error) { console.error(error); }
-        
-      }else{
-        volantis.requestAnimationFrame(SetAPlayerPlugin)
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", ()=>{
-      SetAPlayerPlugin();
-    });
-  
-</script>
-
-
 
 
       <script>
@@ -4037,7 +3895,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4361,7 +4219,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://ino.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ino.iyunmc.cn/","sameAs":["https://github.com/volantis-x"],"description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://ino.iyunmc.cn/","name":"Ino's Blog - 筱冉的温馨小窝"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://ino.iyunmc.cn/","keywords":"Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ino.iyunmc.cn/","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://ino.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://ino.iyunmc.cn?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://ino.iyunmc.cn/notes/elasticsearch"},"author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://ino.iyunmc.cn/"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://ino.iyunmc.cn/notes/elasticsearch","wordCount":0,"datePublished":"2023-04-13T08:07:24.870Z","dateModified":"2023-04-13T08:07:24.852Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/","sameAs":["https://github.com/volantis-x"],"description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://aqu.iyunmc.cn/","name":"Ino's Blog - 筱冉的温馨小窝"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","keywords":"Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://aqu.iyunmc.cn?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://aqu.iyunmc.cn/notes/elasticsearch"},"author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://aqu.iyunmc.cn/notes/elasticsearch","wordCount":0,"datePublished":"2023-04-13T08:07:24.870Z","dateModified":"2023-04-13T08:07:24.852Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
