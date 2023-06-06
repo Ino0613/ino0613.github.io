@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,nofollow">
-  <link rel="canonical" href="https://aqu.iyunmc.cn/blog/docker/">
+  
+  <link rel="canonical" href="https://aqu.iyunmc.cn/notes/kafka.html">
   <!-- 渲染优化 -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
       <link rel="dns-prefetch" href="https://unpkg.com">
@@ -37,21 +37,21 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Ino's Blog - 筱冉的温馨小窝" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>「Docker」基本命令 - Ino's Blog - 筱冉的温馨小窝</title>
-  <meta name="keywords" content="Linux,Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客">
-  <meta desc name="description" content="Docker是一个快速交付应用、运行应用的技术,镜像运行起来就是容器，一个镜像可以运行多个容器，作用：可以将程序机器依赖、运行环境一起打包为一个镜像，可以迁移到任意Linux操作系统;运行时利用沙箱机制形成隔离容器，各个应用互不干扰；启动、移除都可以通过一行命令完成，方便快捷。 - Ino - Ino's Blog - 筱冉的温馨小窝">
+  <title>Kafka - Ino's Blog - 筱冉的温馨小窝</title>
+  <meta name="keywords" content="Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客">
+  <meta desc name="description" content="Ino - 博客网是一个专注于学习分享与教程的一个网站! - Ino - Ino's Blog - 筱冉的温馨小窝">
   
-<meta property="og:type" content="article">
-<meta property="og:title" content="「Docker」基本命令">
-<meta property="og:url" content="https://aqu.iyunmc.cn/blog/Docker/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ino&#39;s Blog - 筱冉的温馨小窝">
+<meta property="og:url" content="https://aqu.iyunmc.cn/notes/Kafka">
 <meta property="og:site_name" content="Ino&#39;s Blog - 筱冉的温馨小窝">
-<meta property="og:description" content="Docker是一个快速交付应用、运行应用的技术,镜像运行起来就是容器，一个镜像可以运行多个容器，作用：可以将程序机器依赖、运行环境一起打包为一个镜像，可以迁移到任意Linux操作系统;运行时利用沙箱机制形成隔离容器，各个应用互不干扰；启动、移除都可以通过一行命令完成，方便快捷。">
+<meta property="og:description" content="1. Kafka简介1.1 消息队列 消息队列 -- 用于存放消息的组件 程序员可以将消息放入到队列当中，也可以从消息队列中获取消息 很多时候消息队列不是一个永久性的存储，是作为临时存储存在的（设定一个期限：设置消息在MQ中保存10天） 消息队列中间件：消息队列的组件，例如：Kafka、Active MQ、RabbitMQ、RocketMQ、  1.2 Kafka的应用场景 异步处理  可以将一些">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-03-25T08:43:21.000Z">
-<meta property="article:modified_time" content="2023-06-04T12:38:49.093Z">
+<meta property="article:published_time" content="2023-06-06T14:16:10.675Z">
+<meta property="article:modified_time" content="2023-06-06T14:16:10.675Z">
 <meta property="article:author" content="Ino">
-<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2862,8 +2862,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-page" id="page" itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="https://aqu.iyunmc.cn/blog/Docker/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-docs" id="docs" itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://aqu.iyunmc.cn/notes/Kafka">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Ino's Blog - 筱冉的温馨小窝">
   </span>
@@ -2883,209 +2883,196 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
     
-      <h1 class="title" itemprop="name headline">
-        「Docker」基本命令
-      </h1>
-      <div class="new-meta-box">
+      <span hidden itemprop="name headline">
         
-          
-            
-  
-  
-  
-  <div class="new-meta-item category">
-    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
-    
-      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url"><span itemprop="name">教程</span></a>
       </span>
-    
-  </div>
-  
-
-
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-03-25T16:43:21+08:00">
-  <a class="notlink">
-    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2023年3月25日</p>
-  </a>
-</div>
-
-          
-        
-        <!-- Custom Files topMeta begin-->
-        
-        <!-- Custom Files topMeta end-->
-      </div>
     
   </div>
 
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <span id="more"></span>
-<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h4 id="Docker是一个快速交付应用、运行应用的技术"><a href="#Docker是一个快速交付应用、运行应用的技术" class="headerlink" title="Docker是一个快速交付应用、运行应用的技术"></a>Docker是一个快速交付应用、运行应用的技术</h4><ol>
-<li>可以将程序机器依赖、运行环境一起打包为一个镜像，可以迁移到任意Linux操作系统</li>
-<li>运行时利用沙箱机制形成隔离容器，各个应用互不干扰</li>
-<li>启动、移除都可以通过一行命令完成，方便快捷</li>
-</ol>
-<h4 id="镜像："><a href="#镜像：" class="headerlink" title="镜像："></a>镜像：</h4><p>将应用及其依赖、环境、配置打包在一起</p>
-<h4 id="容器："><a href="#容器：" class="headerlink" title="容器："></a>容器：</h4><p>镜像运行起来就是容器，一个镜像可以运行多个容器</p>
-<h4 id="Docker结构："><a href="#Docker结构：" class="headerlink" title="Docker结构："></a>Docker结构：</h4><p>服务端：接受命令或远程请求，操作镜像或容器</p>
-<p>客户端：发送命令或者请求到Docker服务端</p>
-<div class="story post-story"><h2 id="Docker基本操作-镜像"><a href="#Docker基本操作-镜像" class="headerlink" title="Docker基本操作-镜像"></a>Docker基本操作-镜像</h2><h4 id="1-基本操作"><a href="#1-基本操作" class="headerlink" title="1.基本操作"></a>1.基本操作</h4><p>docker images 查看镜像</p>
-<p>docker rmi 删除指定镜像</p>
-<p>docker pull 拉取镜像</p>
-<p>docker push 推送镜像</p>
-<p>docker save 保存镜像tar</p>
-<p>docker load 加载tar镜像</p>
-<p>docker ps 查看所有运行的容器及状态</p>
-<p>docker rm 删除容器（不能删除运行中的容器，除非添加 -f 参数）</p>
-<p>docker logs 查看容器运行日志</p>
-<p>docker exec -it [容器名] [要执行的命令] 进入容器执行命令</p>
-<h4 id="2-容器命令"><a href="#2-容器命令" class="headerlink" title="2.容器命令"></a>2.容器命令</h4><h4 id="①-创建运行一个Nginx容器"><a href="#①-创建运行一个Nginx容器" class="headerlink" title="①.创建运行一个Nginx容器"></a>①.创建运行一个Nginx容器</h4><p>步骤一：去docker hub查看Nginx的容器运行命令</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --name containerName -p 80:80 -d nginx </span><br></pre></td></tr></table></figure>
-
-<p><strong>命令解读：</strong></p>
+    <h3 id="1-Kafka简介"><a href="#1-Kafka简介" class="headerlink" title="1. Kafka简介"></a>1. Kafka简介</h3><h4 id="1-1-消息队列"><a href="#1-1-消息队列" class="headerlink" title="1.1 消息队列"></a>1.1 消息队列</h4><ul>
+<li>消息队列 -- 用于存放消息的组件</li>
+<li>程序员可以将消息放入到队列当中，也可以从消息队列中获取消息</li>
+<li>很多时候消息队列不是一个永久性的存储，是作为临时存储存在的（设定一个期限：设置消息在MQ中保存10天）</li>
+<li>消息队列中间件：消息队列的组件，例如：Kafka、Active MQ、RabbitMQ、RocketMQ、</li>
+</ul>
+<h4 id="1-2-Kafka的应用场景"><a href="#1-2-Kafka的应用场景" class="headerlink" title="1.2 Kafka的应用场景"></a>1.2 Kafka的应用场景</h4><ul>
+<li><p>异步处理</p>
 <ul>
-<li>docker run：创建并运行一个容器</li>
-<li>--name：给容器起一个名字，比如叫做ng</li>
-<li>-p：将宿主机端口与容器端口映射，冒号左侧是宿主机端口，右侧是容器端口</li>
-<li>-d：后台运行容器</li>
-<li>nginx：镜像名称，例如nginx</li>
+<li>可以将一些比较耗时的操作放在其他系统中，通过消息队列将需要进行处理的消息进行存储，其他系统可以消费消息队列中的数据</li>
+<li>比较常见的：发送短信验证码、发送邮箱!</li>
+<li><img src="https://raw.githubusercontent.com/Ino0613/Ino/master/img/image-20230606145053229.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Ino0613/Ino/master/img/image-20230606145053229.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230606145053229"></li>
 </ul>
-<h5 id="docker-run命令的常见参数"><a href="#docker-run命令的常见参数" class="headerlink" title="docker run命令的常见参数"></a>docker run命令的常见参数</h5><ul>
-<li>--name：指定容器名称</li>
-<li>-p：指定端口映射</li>
-<li>-d：让容器后台运行</li>
-</ul>
-<h5 id="查看容器日志的命令"><a href="#查看容器日志的命令" class="headerlink" title="查看容器日志的命令"></a>查看容器日志的命令</h5><p>docker logs</p>
-<p>添加 -f 参数可以持续查看日志</p>
-<h5 id="查看容器状态"><a href="#查看容器状态" class="headerlink" title="查看容器状态"></a>查看容器状态</h5><p>docker ps</p>
-<h4 id="2-1-进入Nginx容器，修改HTML文件内容，添加“Ino欢迎你”"><a href="#2-1-进入Nginx容器，修改HTML文件内容，添加“Ino欢迎你”" class="headerlink" title="2.1 进入Nginx容器，修改HTML文件内容，添加“Ino欢迎你”"></a>2.1 进入Nginx容器，修改HTML文件内容，添加“Ino欢迎你”</h4><h5 id="步骤一：进入容器"><a href="#步骤一：进入容器" class="headerlink" title="步骤一：进入容器"></a>步骤一：进入容器</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker exec -it mn bash </span><br></pre></td></tr></table></figure>
-
-<h5 id="命令解读："><a href="#命令解读：" class="headerlink" title="命令解读："></a>命令解读：</h5><ul>
-<li><p>docker exec：进入容器内部，执行一个命令</p>
 </li>
-<li><p>-it：给当前进入的容器创建一个标准输入、输出终端，允许我们与容器交互</p>
-</li>
-<li><p>mn：要进入的容器的名称</p>
-</li>
-<li><p>bash：进入容器后执行的命令，bash是一个linux终端交互命令</p>
-</li>
-</ul>
-<h4 id="②-操作数据卷"><a href="#②-操作数据卷" class="headerlink" title="②.操作数据卷"></a>②.操作数据卷</h4><p>数据卷的作用：</p>
-<p>将容器与数据分离，解耦合，方便操作容器内数据，保证数据安全</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker volume [COMMAND]</span><br></pre></td></tr></table></figure>
-
-<p>docker volume命令是数据卷操作，根据命令后跟随的command来确定下一步的操作：</p>
+<li><p>系统解耦</p>
 <ul>
-<li><p>create      创建一个volume</p>
+<li>原先一个微服务是通过接口（HTTP）调用另一个微服务，这时候耦合很重要，只要接口发生变法就会导致系统不可用</li>
+<li>使用消息队列可以将系统进行解耦合，现在第一个微服务可以将消息放入到消息队列中，另一个微服务可以从消息队列中把消息取出来处理，进行系统耦合</li>
+<li><img src="https://raw.githubusercontent.com/Ino0613/Ino/master/img/image-20230606145124106.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Ino0613/Ino/master/img/image-20230606145124106.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230606145124106"></li>
+</ul>
 </li>
-<li><p>inspect    显示一个或多个volume的信息</p>
+<li><p>流量削峰</p>
+<ul>
+<li>因为消息队列是低延迟、高可靠、高吞吐的，可以应对海量的并发</li>
+</ul>
 </li>
-<li><p>ls              列出所有的volume</p>
-</li>
-<li><p>prune      删除未使用的volume</p>
-</li>
-<li><p>rm            删除一个或多个指定的volume</p>
+<li><p>日志处理</p>
+<ul>
+<li>可以使用消息队列作为临时存储，或者一种通信管道</li>
+<li><img src="https://raw.githubusercontent.com/Ino0613/Ino/master/img/image-20230606145152487.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Ino0613/Ino/master/img/image-20230606145152487.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="image-20230606145152487"></li>
+</ul>
 </li>
 </ul>
+<h4 id="1-3-Kafka的应用场景"><a href="#1-3-Kafka的应用场景" class="headerlink" title="1.3 Kafka的应用场景"></a>1.3 Kafka的应用场景</h4><ul>
+<li><p>生产者、消费者模型</p>
+<ul>
+<li>生产者负责将消息生产到MQ中</li>
+<li>消费者负责从MQ中获取消息</li>
+<li>生产者和消费者是解耦的，可能是生产者一个程序、消费者是另外一个程序</li>
+</ul>
+</li>
+<li><p>消息队列的模式</p>
+<ul>
+<li>点对点：一个消费者消费一个消息</li>
+<li>发布订阅：多个消费者可以消费一个消息</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-环境搭建"><a href="#2-环境搭建" class="headerlink" title="2. 环境搭建"></a>2. 环境搭建</h3><h4 id="2-1-搭建Kafka集群"><a href="#2-1-搭建Kafka集群" class="headerlink" title="2.1 搭建Kafka集群"></a>2.1 搭建Kafka集群</h4><h5 id="2-1-1-下载kafka两种方式"><a href="#2-1-1-下载kafka两种方式" class="headerlink" title="2.1.1 下载kafka两种方式"></a>2.1.1 下载kafka两种方式</h5><p>（1）手动下载 下载地址：Apache Kafka</p>
+<p>（2）也可以用命令下载（直接下载到服务器哦！）：</p>
+<p>​	将安装包下载到&#x2F;opt&#x2F;monitor&#x2F;kafka文件夹下面<br>​	下载命令：<br>​	wget <a href="http://mirrors.hust.edu.cn/apache/kafka/2.0.0/kafka_2.12-2.0.0.tgz" target="_blank" rel="external nofollow noopener noreferrer">http://mirrors.hust.edu.cn/apache/kafka/2.0.0/kafka_2.12-2.0.0.tgz</a><br>​	手动下载移动到&#x2F;opt&#x2F;monitor&#x2F;kafka目录下也可</p>
+<h5 id="2-1-2-解压Kafka"><a href="#2-1-2-解压Kafka" class="headerlink" title="2.1.2 解压Kafka"></a>2.1.2 解压Kafka</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xvzf kafka_2.12-2.5.1.tgz -C ../server/</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-3-修改server-properties文件"><a href="#2-1-3-修改server-properties文件" class="headerlink" title="2.1.3 修改server.properties文件"></a>2.1.3 修改server.properties文件</h5><p><img src="https://raw.githubusercontent.com/Ino0613/Ino/master/img/aHR0cHM6Ly9pbWcuY25idWlsZGVyLmNuL2Jsb2cvNmNhN2JiODNhNzE3MjBmNzBiNzY4NTFiM2Y3MmM0NTQucG5n" class="lazyload" data-srcset="https://raw.githubusercontent.com/Ino0613/Ino/master/img/aHR0cHM6Ly9pbWcuY25idWlsZGVyLmNuL2Jsb2cvNmNhN2JiODNhNzE3MjBmNzBiNzY4NTFiM2Y3MmM0NTQucG5n" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="file"></p>
+<p><img src="https://raw.githubusercontent.com/Ino0613/Ino/master/img/a2f98b81e5e642e4b1791f4ca53d2b50.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Ino0613/Ino/master/img/a2f98b81e5e642e4b1791f4ca53d2b50.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/Ino0613/Ino/master/img/afc0534b97a64911aa412350005a9574.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/Ino0613/Ino/master/img/afc0534b97a64911aa412350005a9574.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<h5 id="2-1-4-配置KAFKA-HOME环境变量"><a href="#2-1-4-配置KAFKA-HOME环境变量" class="headerlink" title="2.1.4 配置KAFKA_HOME环境变量"></a>2.1.4 配置KAFKA_HOME环境变量</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line">export KAFKA_HOME=/export/server/kafka_2.12-2.4.1</span><br><span class="line">export PATH=:$PATH:$&#123;KAFKA_HOME&#125;</span><br><span class="line"></span><br><span class="line">分发到各个节点</span><br><span class="line">scp /etc/profile node2.itcast.cn:$PWD</span><br><span class="line">scp /etc/profile node3.itcast.cn:$PWD</span><br><span class="line">每个节点加载环境变量</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-1-5-启动服务器"><a href="#2-1-5-启动服务器" class="headerlink" title="2.1.5 启动服务器"></a>2.1.5 启动服务器</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 启动ZooKeeper</span><br><span class="line">nohup bin/zookeeper-server-start.sh config/zookeeper.properties &amp;</span><br><span class="line"># 启动Kafka</span><br><span class="line">cd /export/server/kafka_2.12-2.4.1</span><br><span class="line">nohup bin/kafka-server-start.sh config/server.properties &amp;</span><br><span class="line"># 测试Kafka集群是否启动成功</span><br><span class="line">bin/kafka-topics.sh --bootstrap-server 8.130.95.129:9092 --list</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-目录结构分析"><a href="#2-2-目录结构分析" class="headerlink" title="2.2 目录结构分析"></a>2.2 目录结构分析</h4><table>
+<thead>
+<tr>
+<th>目录名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>bin</td>
+<td>Kafka的所有执行脚本都在这里。例如：启动Kafka服务器、创建Topic、生产者、消费者程序等等</td>
+</tr>
+<tr>
+<td>config</td>
+<td>Kafka的所有配置文件</td>
+</tr>
+<tr>
+<td>libs</td>
+<td>运行Kafka所需要的所有JAR包</td>
+</tr>
+<tr>
+<td>logs</td>
+<td>Kafka的所有日志文件，如果Kafka出现一些问题，需要到该目录中去查看异常信息</td>
+</tr>
+<tr>
+<td>site-docs</td>
+<td>Kafka的网站帮助文件</td>
+</tr>
+</tbody></table>
+<h4 id="2-3-Kafka一键启动-x2F-关闭脚本"><a href="#2-3-Kafka一键启动-x2F-关闭脚本" class="headerlink" title="2.3 Kafka一键启动&#x2F;关闭脚本"></a>2.3 Kafka一键启动&#x2F;关闭脚本</h4><p>为了方便将来进行一键启动、关闭Kafka，我们可以编写一个shell脚本来操作。将来只要执行一次该脚本就可以快速启动&#x2F;关闭Kafka。</p>
 <ol>
-<li>创建数据卷</li>
+<li>在节点1中创建 &#x2F;export&#x2F;onekey 目录</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker volume craete html</span><br></pre></td></tr></table></figure>
+<p>cd &#x2F;export&#x2F;onekey</p>
+<ol start="2">
+<li>准备slave配置文件，用于保存要启动哪几个节点上的kafka</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">8.130.95.129</span><br><span class="line">node2.itcast.cn</span><br><span class="line">node3.itcast.cn</span><br></pre></td></tr></table></figure>
 
-<p>   2.查看所有数据</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker volume ls</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>编写start-kafka.sh脚本</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim start-kafka.sh</span><br><span class="line">cat /export/onekey/slave | while read line</span><br><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line"> echo $line</span><br><span class="line"> ssh $line &quot;source /etc/profile;export JMX_PORT=9988;nohup $&#123;KAFKA_HOME&#125;/bin/kafka-server-start.sh $&#123;KAFKA_HOME&#125;/config/server.properties &gt;/dev/nul* 2&gt;&amp;1 &amp; &quot;</span><br><span class="line">&#125;&amp;</span><br><span class="line">wait</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
-<p>   3.查看数据卷详细信息卷</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">docker</span> <span class="string">volume</span> <span class="string">inspect</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="2-2-利用数据卷操作nginx容器"><a href="#2-2-利用数据卷操作nginx容器" class="headerlink" title="2.2 利用数据卷操作nginx容器"></a>2.2 利用数据卷操作nginx容器</h4><p>① 创建容器并挂载数据卷到容器内的HTML目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --name mn -v html:/usr/share/nginx/html -p 80:80 -d nginx</span><br></pre></td></tr></table></figure>
 
-<p>② 进入html数据卷所在位置，并修改HTML内容</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看html数据卷的位置</span></span><br><span class="line"><span class="string">docker</span> <span class="string">volume</span> <span class="string">inspect</span> <span class="string">html</span></span><br><span class="line"><span class="comment"># 进入该目录</span></span><br><span class="line"><span class="string">cd</span> <span class="string">/var/lib/docker/volumes/html/_data</span></span><br><span class="line"><span class="comment"># 修改文件</span></span><br><span class="line"><span class="string">vi</span> <span class="string">index.html</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>编写stop-kafka.sh脚本</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim stop-kafka.sh</span><br><span class="line">cat /export/onekey/slave | while read line</span><br><span class="line">do</span><br><span class="line">&#123;</span><br><span class="line"> echo $line</span><br><span class="line"> ssh $line &quot;source /etc/profile;jps |grep Kafka |cut -d&#x27; &#x27; -f1 |xargs kill -s 9&quot;</span><br><span class="line">&#125;&amp;</span><br><span class="line">wait</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-3-创建并运行一个MySQL容器，将宿主机目录直接挂载到容器"><a href="#2-3-创建并运行一个MySQL容器，将宿主机目录直接挂载到容器" class="headerlink" title="2.3 创建并运行一个MySQL容器，将宿主机目录直接挂载到容器"></a>2.3 创建并运行一个MySQL容器，将宿主机目录直接挂载到容器</h4><p>提示:目录挂载与数据卷挂载的语法是类似的:</p>
+
+
+<ol start="5">
+<li>给start-kafka.sh、stop-kafka.sh配置执行权限</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chmod u+x start-kafka.sh</span><br><span class="line">chmod u+x stop-kafka.sh</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>执行一键启动、一键关闭</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./start-kafka.sh</span><br><span class="line">./stop-kafka.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-创建topic"><a href="#3-创建topic" class="headerlink" title="3. 创建topic"></a>3. 创建topic</h3><h4 id="3-1-创建"><a href="#3-1-创建" class="headerlink" title="3.1 创建"></a>3.1 创建</h4><p>创建一个topic（主题）。Kafka中所有的消息都是保存在主题中，要生产消息到Kafka，首先必须要有一个确定的主题。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建名为test的主题</span><br><span class="line">bin/kafka-topics.sh --create --bootstrap-server 8.130.95.129:9092 --topic test</span><br><span class="line"># 查看目前Kafka中的主题</span><br><span class="line">bin/kafka-topics.sh --list --bootstrap-server 8.130.95.129:9092</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-生产消息到Kafka"><a href="#3-2-生产消息到Kafka" class="headerlink" title="3.2 生产消息到Kafka"></a>3.2 生产消息到Kafka</h4><p>使用Kafka内置的测试程序，生产一些消息到Kafka的test主题中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin/kafka-console-producer.sh --broker-list 8.130.95.129:9092 --topic test</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-从Kafka消费消息"><a href="#3-3-从Kafka消费消息" class="headerlink" title="3.3 从Kafka消费消息"></a>3.3 从Kafka消费消息</h4><p>使用下面的命令来消费 test 主题中的消息。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bin/kafka-console-consumer.sh --bootstrap-server 8.130.95.129:9092 --topic test --from-beginning</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-Kafka集群搭建"><a href="#4-Kafka集群搭建" class="headerlink" title="4. Kafka集群搭建"></a>4. Kafka集群搭建</h3><ul>
+<li>Kafka集群是必须要有ZooKeeper的</li>
+</ul>
+<p>注意：</p>
 <ul>
-<li><p>-v[宿主机目录]:[容器内目录]</p>
+<li>每一个Kafka的节点都需要修改broker.id（每个结点的标识不能重复）</li>
+<li>log.dir数据存储目录需要配置</li>
+</ul>
+<h4 id="4-1-Kafka的生产者-x2F-消费者-x2F-工具"><a href="#4-1-Kafka的生产者-x2F-消费者-x2F-工具" class="headerlink" title="4.1 Kafka的生产者&#x2F;消费者&#x2F;工具"></a>4.1 Kafka的生产者&#x2F;消费者&#x2F;工具</h4><ul>
+<li>安装Kafka集群，可以测试一下<ul>
+<li>创建一个topic主题（消息都是存放在topic中，类似mysql建表的过程）</li>
+<li>基于Kafka的内置测试生产者脚本来读取标准输入（键盘输入）的数据，并放入到topic中</li>
+<li>基于Kafka的内置测试消费者脚本来消费topic中的数据</li>
+</ul>
 </li>
-<li><p>-v[宿主机文件]:[容器内文件]</p>
-<p>实现思路如下:</p>
-<p>1．在将课前资料中的mysql.tar文件上传到虚拟机，通过load命令加载为镜像</p>
-<p>2．创建目录&#x2F;tmp&#x2F;myql&#x2F;data</p>
-<p>3．创建目录&#x2F;tmp&#x2F;myql&#x2F;conf，将课前资料提供的hmy.cnf文件上传到&#x2F;tmp&#x2F;myql&#x2F;conf</p>
-<p>4．去DockerHub查阅资料，创建并运行MySQL容器，要求:</p>
-<ul>
-<li><p>挂载&#x2F;tmp&#x2F;myql&#x2F;data到mysql容器内数据存储目录</p>
-</li>
-<li><p>挂载&#x2F;tmp&#x2F;myql&#x2F;conf&#x2F;hmy.cnf到mysql容器的配置文件</p>
-</li>
-<li><p>设置MySQL密码</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run --name mysql -e MYSQL_ROOT_PASSWORD=adg153 -p 3307:3306 -v /tmp/mysql/conf/hmy.cnf:/etc/mysql/conf.d/hmy.cnf -v /tmp/mysql/data:/var/lib/mysql -d mysql:5.7.25</span><br></pre></td></tr></table></figure></li>
+<li>Kafka Tool<ul>
+<li>浏览Kafka集群节点、多少个topic、多少个分区</li>
+<li>创建topic&#x2F;删除topic</li>
+<li>浏览ZooKeeper中的数据</li>
 </ul>
 </li>
 </ul>
-</div><div class="story post-story"><h2 id="自定义镜像-镜像结构"><a href="#自定义镜像-镜像结构" class="headerlink" title="自定义镜像 - 镜像结构"></a>自定义镜像 - 镜像结构</h2><p>竟像是分层结构，每一层成为一个Layer（层）</p>
-<p>BaseImage层：包含基本的系统函数库、环境变量、文件系统</p>
-<p>Entrypoint：入口，是镜像中应用启动的命令（systemctl start mysql.service）</p>
-<p>其他：在BaseImage基础上添加依赖、安装程序、完成整个应用的安装和配置</p>
-<h1 id="2-CentOS7安装DockerCompose"><a href="#2-CentOS7安装DockerCompose" class="headerlink" title="2.CentOS7安装DockerCompose"></a>2.CentOS7安装DockerCompose</h1></div><div class="story post-story"><h2 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1.下载"></a>2.1.下载</h2><p>Linux下需要通过命令下载：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/1.23.1/docker-compose-`<span class="built_in">uname</span> -s`-`<span class="built_in">uname</span> -m` &gt; /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-<p>如果下载速度较慢，或者下载失败，可以使用课前资料提供的docker-compose文件：</p>
-<p>上传到<code>/usr/local/bin/</code>目录也可以。</p>
-</div><div class="story post-story"><h2 id="2-2-修改文件权限"><a href="#2-2-修改文件权限" class="headerlink" title="2.2.修改文件权限"></a>2.2.修改文件权限</h2><p>修改文件权限：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 修改权限</span></span><br><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="2-3-Base自动补全命令："><a href="#2-3-Base自动补全命令：" class="headerlink" title="2.3.Base自动补全命令："></a>2.3.Base自动补全命令：</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 补全命令</span></span><br><span class="line">curl -L https://raw.githubusercontent.com/docker/compose/1.29.1/contrib/completion/bash/docker-compose &gt; /etc/bash_completion.d/docker-compose</span><br></pre></td></tr></table></figure>
-
-<p>如果这里出现错误，需要修改自己的hosts文件：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;199.232.68.133 raw.githubusercontent.com&quot;</span> &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
-
-<h1 id="3-Docker镜像仓库"><a href="#3-Docker镜像仓库" class="headerlink" title="3.Docker镜像仓库"></a>3.Docker镜像仓库</h1><p>搭建镜像仓库可以基于Docker官方提供的DockerRegistry来实现。</p>
-<p>官网地址：<a href="https://hub.docker.com/_/registry" target="_blank" rel="external nofollow noopener noreferrer">https://hub.docker.com/_/registry</a></p>
-</div><div class="story post-story"><h2 id="3-1-简化版镜像仓库"><a href="#3-1-简化版镜像仓库" class="headerlink" title="3.1.简化版镜像仓库"></a>3.1.简化版镜像仓库</h2><p>Docker官方的Docker Registry是一个基础版本的Docker镜像仓库，具备仓库管理的完整功能，但是没有图形化界面。</p>
-<p>搭建方式比较简单，命令如下：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --restart=always \</span><br><span class="line">    --name registry \</span><br><span class="line">    -p 5000:5000 \</span><br><span class="line">    -v registry-data:/var/lib/registry \</span><br><span class="line">    registry</span><br></pre></td></tr></table></figure>
-
-<p>命令中挂载了一个数据卷registry-data到容器内的&#x2F;var&#x2F;lib&#x2F;registry 目录，这是私有镜像库存放数据的目录。</p>
-<p>访问<a href="http://yourip:5000/v2/_catalog" target="_blank" rel="external nofollow noopener noreferrer">http://YourIp:5000/v2/_catalog</a> 可以查看当前私有镜像服务中包含的镜像</p>
-</div><div class="story post-story"><h2 id="3-2-带有图形化界面版本"><a href="#3-2-带有图形化界面版本" class="headerlink" title="3.2.带有图形化界面版本"></a>3.2.带有图形化界面版本</h2><p>使用DockerCompose部署带有图象界面的DockerRegistry，命令如下：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3.0&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">registry:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">registry</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./registry-data:/var/lib/registry</span></span><br><span class="line">  <span class="attr">ui:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">joxit/docker-registry-ui:static</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:80</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">REGISTRY_TITLE=传智教育私有仓库</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">REGISTRY_URL=http://registry:5000</span></span><br><span class="line">    <span class="attr">depends_on:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">registry</span></span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="3-3-配置Docker信任地址"><a href="#3-3-配置Docker信任地址" class="headerlink" title="3.3.配置Docker信任地址"></a>3.3.配置Docker信任地址</h2><p>我们的私服采用的是http协议，默认不被Docker信任，所以需要做一个配置：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开要修改的文件</span></span><br><span class="line">vi /etc/docker/daemon.json</span><br><span class="line"><span class="comment"># 添加内容：</span></span><br><span class="line"><span class="string">&quot;insecure-registries&quot;</span>:[<span class="string">&quot;http://192.168.150.101:8080&quot;</span>]</span><br><span class="line"><span class="comment"># 重加载</span></span><br><span class="line">systemctl daemon-reload</span><br><span class="line"><span class="comment"># 重启docker</span></span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h4 id="4-2-Kafka的基准测试工具"><a href="#4-2-Kafka的基准测试工具" class="headerlink" title="4.2 Kafka的基准测试工具"></a>4.2 Kafka的基准测试工具</h4><ul>
+<li>Kafka中提供了内置的性能测试工具<ul>
+<li>生产者：测试生产每秒传输的数据条（多少条数据、多少M的数据）</li>
+<li>消费者：测试消费每条拉去的数据量</li>
+</ul>
+</li>
+<li>对比生产者和消费者：消费者的速度更快</li>
+</ul>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
   </div>
   
+  
+    
+    <div class="footer">
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
   
   
     
@@ -3095,10 +3082,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-06-04T20:38:49+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-06-06T22:16:10+08:00">
   <a class="notlink">
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2023年6月4日</p>
+    <p>本页文档最后更新于：2023年6月6日</p>
   </a>
 </div>
 
@@ -3106,13 +3093,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
-  
-  
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/linux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
-  <span hidden itemprop="keywords">Linux</span>
-  
-
 
         
       
@@ -3122,7 +3102,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aqu.iyunmc.cn/blog/Docker/&title=「Docker」基本命令 - Ino's Blog - 筱冉的温馨小窝&summary=">
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://aqu.iyunmc.cn/notes/Kafka&title=Kafka - Ino's Blog - 筱冉的温馨小窝&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -3130,7 +3110,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aqu.iyunmc.cn/blog/Docker/&title=「Docker」基本命令 - Ino's Blog - 筱冉的温馨小窝&summary=">
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://aqu.iyunmc.cn/notes/Kafka&title=Kafka - Ino's Blog - 筱冉的温馨小窝&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -3138,7 +3118,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aqu.iyunmc.cn/blog/Docker/&title=「Docker」基本命令 - Ino's Blog - 筱冉的温馨小窝&summary=">
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=https://aqu.iyunmc.cn/notes/Kafka&title=Kafka - Ino's Blog - 筱冉的温馨小窝&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -3167,19 +3147,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
-    <div class="prev-next">
-      
-        <a class="prev" href="/blog/%E7%BD%91%E5%85%B3%E7%9A%84%E4%BD%9C%E7%94%A8/">
-          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>网关GateWay</p>
-        </a>
-      
-      
-        <a class="next" href="/blog/%E5%AE%89%E8%A3%85elasticsearch/">
-          <p class="title">安装Elasticsearch<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-        </a>
-      
-    </div>
-  
   <!-- 文章推荐 -->
   
   
@@ -3194,7 +3161,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/blog/Docker/#comments">
+      <meta itemprop="discussionUrl" content="/notes/Kafka#comments">
     </span>
     <p ct><i class="fa-solid fa-comments"></i> 评论</p>
     
@@ -3210,6 +3177,71 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 </div>
 <aside id="l_side" itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
+  
+
+  
+    
+    
+      
+<section class="widget grid desktop mobile">
+  
+  <header>
+    
+      <i class="fa-duotone fa-map-signs PETERRIVE fa-fw fa-fw" aria-hidden="true"></i><span class="name">导航</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="grid navigation fixed">
+      
+        <a class="flat-box" href="/notes/" active-action="action-notes">
+          
+            <i class="fa-duotone fa-books TURQUOISE fa-fw fa-fw" aria-hidden="true"></i>
+          
+          笔记
+        </a>
+      
+        <a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="https://gpt.iyunmc.cn" active-action="action-https:gptiyunmccn">
+          
+            <i class="fa-duotone fa-robot PETERRIVE fa-fw" aria-hidden="true"></i>
+          
+          ChatGPT
+        </a>
+      
+        <a class="flat-box" href="/contributors/" active-action="action-contributors">
+          
+            <i class="fa-duotone fa-comment-alt-smile PETERRIVE fa-fw fa-fw" aria-hidden="true"></i>
+          
+          留言板
+        </a>
+      
+        <a class="flat-box" href="/archives/" active-action="action-archives">
+          
+            <i class="fa-duotone fa-link ALIZARIN fa-fw fa-fw" aria-hidden="true"></i>
+          
+          友情链接
+        </a>
+      
+        <a class="flat-box" href="https://www.travellings.cn/go.html" rel="external nofollow noopener noreferrer" target="_blank" active-action="action-https:wwwtravellingscngohtml">
+          
+            <i class="fa-duotone fa-paper-plane SUNFLOWER fa-fw fa-fw" aria-hidden="true"></i>
+          
+          开往
+        </a>
+      
+    </div>
+  </div>
+</section>
+
+    
   
 
   
@@ -3236,8 +3268,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
   <div class="content">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker%E6%98%AF%E4%B8%80%E4%B8%AA%E5%BF%AB%E9%80%9F%E4%BA%A4%E4%BB%98%E5%BA%94%E7%94%A8%E3%80%81%E8%BF%90%E8%A1%8C%E5%BA%94%E7%94%A8%E7%9A%84%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">Docker是一个快速交付应用、运行应用的技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">镜像：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">容器：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker%E7%BB%93%E6%9E%84%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">Docker结构：</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Docker%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-%E9%95%9C%E5%83%8F"><span class="toc-number"></span> <span class="toc-text">Docker基本操作-镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.</span> <span class="toc-text">1.基本操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.</span> <span class="toc-text">2.容器命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A0-%E5%88%9B%E5%BB%BA%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AANginx%E5%AE%B9%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">①.创建运行一个Nginx容器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#docker-run%E5%91%BD%E4%BB%A4%E7%9A%84%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">docker run命令的常见参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E6%97%A5%E5%BF%97%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-number">3.2.</span> <span class="toc-text">查看容器日志的命令</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E7%8A%B6%E6%80%81"><span class="toc-number">3.3.</span> <span class="toc-text">查看容器状态</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%BF%9B%E5%85%A5Nginx%E5%AE%B9%E5%99%A8%EF%BC%8C%E4%BF%AE%E6%94%B9HTML%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%EF%BC%8C%E6%B7%BB%E5%8A%A0%E2%80%9CIno%E6%AC%A2%E8%BF%8E%E4%BD%A0%E2%80%9D"><span class="toc-number">4.</span> <span class="toc-text">2.1 进入Nginx容器，修改HTML文件内容，添加“Ino欢迎你”</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="toc-number">4.1.</span> <span class="toc-text">步骤一：进入容器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A7%A3%E8%AF%BB%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">命令解读：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A1-%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="toc-number">5.</span> <span class="toc-text">②.操作数据卷</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E5%8D%B7%E6%93%8D%E4%BD%9Cnginx%E5%AE%B9%E5%99%A8"><span class="toc-number">6.</span> <span class="toc-text">2.2 利用数据卷操作nginx容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E5%88%9B%E5%BB%BA%E5%B9%B6%E8%BF%90%E8%A1%8C%E4%B8%80%E4%B8%AAMySQL%E5%AE%B9%E5%99%A8%EF%BC%8C%E5%B0%86%E5%AE%BF%E4%B8%BB%E6%9C%BA%E7%9B%AE%E5%BD%95%E7%9B%B4%E6%8E%A5%E6%8C%82%E8%BD%BD%E5%88%B0%E5%AE%B9%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text">2.3 创建并运行一个MySQL容器，将宿主机目录直接挂载到容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%95%9C%E5%83%8F-%E9%95%9C%E5%83%8F%E7%BB%93%E6%9E%84"><span class="toc-number"></span> <span class="toc-text">自定义镜像 - 镜像结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E4%B8%8B%E8%BD%BD"><span class="toc-number"></span> <span class="toc-text">2.1.下载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="toc-number"></span> <span class="toc-text">2.2.修改文件权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Base%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number"></span> <span class="toc-text">2.3.Base自动补全命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E7%AE%80%E5%8C%96%E7%89%88%E9%95%9C%E5%83%8F%E4%BB%93%E5%BA%93"><span class="toc-number"></span> <span class="toc-text">3.1.简化版镜像仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E5%B8%A6%E6%9C%89%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%E7%89%88%E6%9C%AC"><span class="toc-number"></span> <span class="toc-text">3.2.带有图形化界面版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E9%85%8D%E7%BD%AEDocker%E4%BF%A1%E4%BB%BB%E5%9C%B0%E5%9D%80"><span class="toc-number"></span> <span class="toc-text">3.3.配置Docker信任地址</span></a>
-  </li></div>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Kafka%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">1. Kafka简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 消息队列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-Kafka%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.2.</span> <span class="toc-text">1.2 Kafka的应用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-Kafka%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.3.</span> <span class="toc-text">1.3 Kafka的应用场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">2. 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E6%90%AD%E5%BB%BAKafka%E9%9B%86%E7%BE%A4"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 搭建Kafka集群</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-1-%E4%B8%8B%E8%BD%BDkafka%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">2.1.1.</span> <span class="toc-text">2.1.1 下载kafka两种方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-2-%E8%A7%A3%E5%8E%8BKafka"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.1.2 解压Kafka</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-3-%E4%BF%AE%E6%94%B9server-properties%E6%96%87%E4%BB%B6"><span class="toc-number">2.1.3.</span> <span class="toc-text">2.1.3 修改server.properties文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-4-%E9%85%8D%E7%BD%AEKAFKA-HOME%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.1.4.</span> <span class="toc-text">2.1.4 配置KAFKA_HOME环境变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-5-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.1.5.</span> <span class="toc-text">2.1.5 启动服务器</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 目录结构分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-Kafka%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8-x2F-%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 Kafka一键启动&#x2F;关闭脚本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BAtopic"><span class="toc-number">3.</span> <span class="toc-text">3. 创建topic</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%88%9B%E5%BB%BA"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%94%9F%E4%BA%A7%E6%B6%88%E6%81%AF%E5%88%B0Kafka"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 生产消息到Kafka</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E4%BB%8EKafka%E6%B6%88%E8%B4%B9%E6%B6%88%E6%81%AF"><span class="toc-number">3.3.</span> <span class="toc-text">3.3 从Kafka消费消息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Kafka%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA"><span class="toc-number">4.</span> <span class="toc-text">4. Kafka集群搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-Kafka%E7%9A%84%E7%94%9F%E4%BA%A7%E8%80%85-x2F-%E6%B6%88%E8%B4%B9%E8%80%85-x2F-%E5%B7%A5%E5%85%B7"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 Kafka的生产者&#x2F;消费者&#x2F;工具</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-Kafka%E7%9A%84%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 Kafka的基准测试工具</span></a></li></ol></li></ol>
+  </div>
+</section>
+
+  
+  
+<section class="widget desktop">
+  
+  <header>
+    
+      <i class="fa-duotone fa-award TURQUOISE fa-fw fa-fw" aria-hidden="true"></i><span class="name">站点信息</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="webinfo">
+      
+        <div class="webinfo-item">
+          <div>文章数目：</div>
+          <div>12 篇</div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>已运行时间：</div>
+          <div id="webinfo-runtime-count"></div>
+        </div>
+      
+
+
+      
+
+      
+        <div class="webinfo-item">
+          <div>本站访客数：</div>
+          <div>
+            <span id="busuanzi_value_site_uv">
+              <i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i>
+            </span> 
+            人
+          </div>
+        </div>
+        <div class="webinfo-item">
+          <div>本站总访问量：</div>
+          <div>
+            <span id="busuanzi_value_site_pv">
+              <i class="fa-solid fa-fan fa-spin fa-fw" aria-hidden="true"></i>
+            </span> 
+            次
+          </div>
+        </div>
+      
+
+      
+        <div class="webinfo-item">
+          <div>最后活动时间：</div>
+          <div id="last-update-show">2023-06-06 日</div>
+        </div>
+      
+    </div>
+  </div>
 </section>
 
   
@@ -4402,7 +4495,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/","sameAs":["https://github.com/volantis-x"],"description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://aqu.iyunmc.cn/","name":"Ino's Blog - 筱冉的温馨小窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://aqu.iyunmc.cn/categories/教程/","name":"教程"}},{"@type":"ListItem","position":3,"item":{"@id":"https://aqu.iyunmc.cn/blog/Docker/","name":"「Docker」基本命令"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","keywords":"Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://aqu.iyunmc.cn?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"「Docker」基本命令","description":"Docker是一个快速交付应用、运行应用的技术,镜像运行起来就是容器，一个镜像可以运行多个容器，作用：可以将程序机器依赖、运行环境一起打包为一个镜像，可以迁移到任意Linux操作系统;运行时利用沙箱机制形成隔离容器，各个应用互不干扰；启动、移除都可以通过一行命令完成，方便快捷。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://aqu.iyunmc.cn/blog/Docker/"},"author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://aqu.iyunmc.cn/blog/Docker/","wordCount":0,"datePublished":"2023-03-25T08:43:21.000Z","dateModified":"2023-06-04T12:38:49.093Z","articleSection":"教程","keywords":"Linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/","sameAs":["https://github.com/volantis-x"],"description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://aqu.iyunmc.cn/","name":"Ino's Blog - 筱冉的温馨小窝"}},{"@type":"ListItem","position":2,"item":{"@id":"https://aqu.iyunmc.cn/categories/n/","name":"n"}},{"@type":"ListItem","position":2,"item":{"@id":"https://aqu.iyunmc.cn/categories/n/o/","name":"o"}},{"@type":"ListItem","position":2,"item":{"@id":"https://aqu.iyunmc.cn/categories/n/o/t/","name":"t"}},{"@type":"ListItem","position":2,"item":{"@id":"https://aqu.iyunmc.cn/categories/n/o/t/e/","name":"e"}},{"@type":"ListItem","position":2,"item":{"@id":"https://aqu.iyunmc.cn/categories/n/o/t/e/s/","name":"s"}},{"@type":"ListItem","position":3,"item":{"@id":"https://aqu.iyunmc.cn/notes/Kafka.html","name":"Kafka"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","keywords":"Ino,博客网,yunmc,论坛,博客,学习,Java,Volantis,Hexo,Hexo主题,Blog,博客","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","url":"https://aqu.iyunmc.cn/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://aqu.iyunmc.cn?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Kafka","description":"Ino - 博客网是一个专注于学习分享与教程的一个网站!","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://aqu.iyunmc.cn/notes/Kafka"},"author":{"@type":"Person","name":"Ino","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://aqu.iyunmc.cn/"},"publisher":{"@type":"Organization","name":"Ino's Blog - 筱冉的温馨小窝","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://aqu.iyunmc.cn/notes/Kafka","wordCount":0,"datePublished":"2023-06-06T14:16:10.675Z","dateModified":"2023-06-06T14:16:10.675Z","articleSection":"n","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
